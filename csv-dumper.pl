@@ -21,10 +21,17 @@ sub main {
 	#print Dumper(@values);
 	#$lines[$count] = $_;
 	#$count++;
-	push @lines,$_;
+	push @lines,\@values;
   }
+  print $lines[0][0]."\n";
+  print $lines[0][1]."\n";
+  print $lines[1][2]."\n";
   foreach my $newline(@lines) {
-    print "$newline"."\n" ;
+    #print "$newline"."\n" ;
+	#print Dumper($newline);
+	print "Name: " . $newline -> [0] . "\n";
+	print "Amount: " .$newline -> [1] . "\n";
+	print "Date: " .$newline ->[2] . "\n";
 
   }
   close INPUT;
