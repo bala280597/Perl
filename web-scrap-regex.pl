@@ -16,11 +16,11 @@ sub main {
   unless(defined($content)){
     die " Unreachable URL \n";
   }
-  while ($content =~ m|<\s*a\s+[^>]*href\s*=\s*['"]([^>'"]+)['"]|sig) {
-    print "Match: $1 \n ";
+  while ($content =~ m|<\s*a\s+[^>]*href\s*=\s*['"]([^>'"]+)['"][^>]*>\s*([^<>]*)\s*</|sig) {
+    print "$2  : $1 \n ";
   
   }
-
+  
 }
 
 main ();
